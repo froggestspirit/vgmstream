@@ -25,7 +25,7 @@ source_group("Source Files\\layout" FILES ${LAYOUT_SOURCES})
 source_group("Source Files\\meta" FILES ${META_SOURCES})
 source_group("Source Files\\util" FILES ${UTIL_SOURCES})
 
-add_library(libvgmstream STATIC
+add_library(libvgmstream SHARED
 	${CODING_HEADERS}
 	${CODING_SOURCES}
 	${LAYOUT_HEADERS}
@@ -38,10 +38,6 @@ add_library(libvgmstream STATIC
 	${MAIN_HEADERS}
 	${MAIN_SOURCES})
 set_target_properties(libvgmstream PROPERTIES PREFIX "")
-
-if(USE_FFMPEG)
-	add_dependencies(libvgmstream avcodec)
-endif()
 
 setup_target(libvgmstream)
 
