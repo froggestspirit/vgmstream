@@ -30,7 +30,7 @@ libvgmstream.a: $(OBJECTS)
 	$(AR) crs libvgmstream.a $(OBJECTS)
 
 libvgmstream.so: $(OBJECTS)
-	$(LD) -shared -o libvgmstream.so $(OBJECTS)
+	$(LD) -shared -o libvgmstream.so $(OBJECTS) -lvorbis -lmpg123 -lavutil -lavformat -lavcodec
 
 #vgmstream-deps:
 #	$(CC) $(CFLAGS) -M -o vgmstream-deps
