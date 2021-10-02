@@ -39,7 +39,7 @@ add_library(libvgmstream SHARED
 	${MAIN_SOURCES})
 set_target_properties(libvgmstream PROPERTIES PREFIX "")
 
-setup_target(libvgmstream)
+setup_target(libvgmstream TRUE)
 
 # Set up the proper include directories
 target_include_directories(libvgmstream PRIVATE
